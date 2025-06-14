@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" class="transition duration-300">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Moody - Neo Journal</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto Mono', monospace;
+    }
+    .neo-border {
+      border: 3px solid black;
+    }
+    .neo-shadow {
+      box-shadow: 6px 6px 0px black;
+    }
+    .neo-button {
+      background-color: #facc15;
+      font-weight: bold;
+      padding: 0.75rem 1.5rem;
+      box-shadow: 6px 6px 0px black;
+      border: 3px solid black;
+    }
+    .neo-button:hover {
+      background-color: #fbbf24;
+    }
+    .neo-card {
+      background: white;
+      border: 3px solid black;
+      box-shadow: 6px 6px 0px black;
+    }
+    .dark .neo-card {
+      background: #1e1e1e;
+      color: #f1f1f1;
+    }
+    .dark body {
+      background-color: #0f0f0f;
+      color: white;
+    }
+    .dark .neo-button {
+      background-color: #333;
+      color: white;
+    }
+    .dark .neo-button:hover {
+      background-color: #555;
+    }
+    .dark .bg-white {
+      background-color: #1a1a1a !important;
+    }
+    .dark .text-gray-600 {
+      color: #ccc !important;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col transition duration-300">
+
+  <!-- Navbar -->
+  <nav class="bg-white dark:bg-gray-900 neo-border px-6 py-4 flex justify-between items-center shadow-md m-4">
+    <a href="#about" class="text-lg font-medium underline">ABOUT</a>
+    <a href="#" class="text-2xl font-bold">MOODY</a>
+    <div class="flex gap-4 items-center">
+      <button id="toggleDark" class="neo-button text-sm">Dark Mode</button>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="flex-grow flex flex-col justify-between">
+    <section class="flex-grow px-6 py-12 flex flex-col justify-center items-center neo-border neo-shadow bg-white dark:bg-gray-900 mx-4 mt-4">
+      <div class="max-w-6xl w-full text-center">
+        <h1 class="text-4xl font-bold mb-4">Unleash Your Emotions with Moody</h1>
+        <p class="text-lg mb-8 text-gray-600">Your personal space to reflect, journal, and understand yourself better.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="p-6 neo-card">
+            <h3 class="text-xl font-bold mb-2">🔐 Secure & Private</h3>
+            <p>Your entries are safe and only accessible to you.</p>
+          </div>
+          <div class="p-6 neo-card">
+            <h3 class="text-xl font-bold mb-2">✨ Easy to Use</h3>
+            <p>Simple interface for a seamless journaling experience.</p>
+          </div>
+          <div class="p-6 neo-card">
+            <h3 class="text-xl font-bold mb-2">🎨 Personalized Experience</h3>
+            <p>Customize your journal to match your style.</p>
+          </div>
+        </div>
+
+        <div class="mt-10">
+          <button class="neo-button" onclick="window.location.href='/home'">Use now</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-white dark:bg-gray-900 p-4 text-center">
+      <p class="text-xs text-gray-500 dark:text-gray-400">Made with ❤️ by Kaushik Joshi</p>
+    </footer>
+  
+  </main>
+
+  <!-- JS for Dark Mode Toggle -->
+  <script>
+    const toggle = document.getElementById("toggleDark");
+    toggle.addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+    });
+  </script>
+
+</body>
+</html>

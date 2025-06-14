@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" class="transition duration-300">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Moody Journal - Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto Mono', monospace;
+    }
+    .neo-border { border: 3px solid black; }
+    .neo-shadow { box-shadow: 6px 6px 0 black; }
+    .neo-button {
+      background-color: #facc15;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border: 3px solid black;
+      box-shadow: 4px 4px 0 black;
+    }
+    .neo-button:hover { background-color: #fbbf24; }
+    .neo-card {
+      background: white;
+      border: 3px solid black;
+      box-shadow: 6px 6px 0 black;
+      padding: 1rem;
+    }
+    .dark .neo-card {
+      background: #1e1e1e;
+      color: #f1f1f1;
+    }
+    .dark body {
+      background-color: #0f0f0f;
+      color: white;
+    }
+    .dark .neo-button { background-color: #333; color: white; }
+    .dark .neo-button:hover { background-color: #555; }
+    .dark .bg-white { background-color: #1a1a1a !important; }
+    
+    /* Fix for text area in dark mode */
+    textarea {
+      background-color: white;
+      color: black;
+    }
+    .dark textarea {
+      background-color: #1e1e1e;
+      color: #f1f1f1;
+      border: 1px solid #555;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col transition duration-300">
+
+  <!-- Navbar -->
+  <nav class="bg-white m-4 dark:bg-gray-900 neo-border px-6 py-4 flex justify-between items-center">
+    <a href="#" class="text-2xl font-bold">MOODY</a>
+    <button id="toggleDark" class="neo-button text-sm">Toggle Dark</button>
+  </nav>
+
+  <!-- Entries Section -->
+  <main class="flex-grow p-6 space-y-6">
+    <h1 class="text-3xl font-bold">Your Journal Entries</h1>
+
+    <!-- Example Card -->
+    <div class="neo-card">
+      <div class="flex justify-between items-center">
+        <h2 class="text-xl font-bold">Today I felt great!</h2>
+        <button class="neo-button text-sm">Delete</button>
+      </div>
+      <p class="text-sm mt-2 text-gray-600 dark:text-gray-300">2025-06-05 10:30 AM</p>
+      <p class="mt-2">
+        Sentiment: <span class="text-green-600 dark:text-green-400 font-bold">Positive</span>
+      </p>
+    </div>
+
+    <!-- Another Card -->
+    <div class="neo-card">
+      <div class="flex justify-between items-center">
+        <h2 class="text-xl font-bold">Felt a bit low today.</h2>
+        <button class="neo-button text-sm">Delete</button>
+      </div>
+      <p class="text-sm mt-2 text-gray-600 dark:text-gray-300">2025-06-04 09:15 PM</p>
+      <p class="mt-2">
+        Sentiment: <span class="text-red-600 dark:text-red-400 font-bold">Negative</span>
+      </p>
+    </div>
+  </main>
+
+  <!-- Floating New Entry Button -->
+  <button class="neo-button fixed bottom-6 right-6">+ New Entry</button>
+
+  <footer class="bg-white dark:bg-gray-900 p-4 text-center">
+    <p class="text-xs text-gray-500 dark:text-gray-400">Made with ❤️ by Kaushik Joshi</p>
+  </footer>
+
+  <!-- Dark mode toggle JS -->
+  <script>
+    const toggle = document.getElementById("toggleDark");
+    toggle.addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+    });
+  </script>
+  <script src="/js/home.js"></script>
+
+</body>
+</html>
