@@ -14,3 +14,15 @@ It uses vader library of python to analyze each note and categorized them into 3
 ### Fork Instructions:
 * feel free to fork the project and add new features to the project.
 * It will be really appreciated if you can integrate the AI into the spring boot server itself so that there will be no need to run two separate servers.
+
+
+
+
+
+
+
+
+
+
+
+
